@@ -1,0 +1,19 @@
+{
+  "name": "Viral Website",
+  "description": "MIT Media Lab's Viral Communication's Website",
+  "repository": "",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": [
+    "react",
+    "isomorphic",
+    "universal",
+    "webpack",
+    "express",
+    "hot reloading",
+    "react-hot-reloader",
+    "redux",
+    "starter",
+    "boilerplate",
+    "babel"
+  ]
+}
