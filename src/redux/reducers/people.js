@@ -34,6 +34,11 @@ export default function todoReducer(state = defaultState, action) {
         data: null,
         error: action.error
       };
+    case 'CLEAR_PEOPLE':
+      return {
+        ...state,
+        data: new Immutable.List()
+      };
     default:
       return state;
   }
@@ -44,5 +49,12 @@ export function loadPeople() {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
     promise: (client) => client.get('/widget/load/param1/param2') // params not used, just shown as demonstration
+  };
+}
+
+export function clearPeople() {
+  console.log('in clear people');
+  return {
+    type: 'CLEAR_PEOPLE'
   };
 }

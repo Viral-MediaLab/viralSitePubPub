@@ -1,14 +1,15 @@
 import React, {Component, PropTypes} from 'react';
 // import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {loadPeople} from 'redux/reducers/people';
+import {loadPeople, clearPeople} from 'redux/reducers/people';
 
 @connect(
   state => ({data: state.people.data})
 )
 export default class Project extends Component {
   static propTypes = {
-    data: PropTypes.array
+    data: PropTypes.array,
+    dispatch: PropTypes.func
   }
 
   // static fetchData(getState, dispatch) {
@@ -16,6 +17,12 @@ export default class Project extends Component {
   //   // promises.push(dispatch(loadAuth()));
   //   // return Promise.all(promises);
   // }
+  componentWillUnmount() {
+    console.log('leaving!');
+    this.props.dispatch(clearPeople());
+    // dispatch(clearPeople());
+  }
+
   static fetchDataDeferred(getState, dispatch) {
     return dispatch(loadPeople());
   }
