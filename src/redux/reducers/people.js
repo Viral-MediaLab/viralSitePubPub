@@ -11,11 +11,13 @@ const defaultState = new Immutable.Map({
 export default function todoReducer(state = defaultState, action) {
   switch (action.type) {
     case LOAD:
+      console.log('in Load');
       return {
         ...state,
         loading: true
       };
     case LOAD_SUCCESS:
+      console.log('in load success');
       console.log(action);
       return {
         ...state,

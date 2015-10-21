@@ -30,7 +30,7 @@ export default class Project extends Component {
           { this.props.data.map((item)=> {
             return (<div key={item.id}>
               {item.color}
-              {item.name}
+              {item.owner}
               <hr/>
             </div>
             );
