@@ -18,11 +18,12 @@ export default function load(req) {
   return new Promise((resolve, reject) => {
     // make async call to database
     setTimeout(() => {
-      if (Math.floor(Math.random() * 3) === 0) {
-        reject('Widget load fails 33% of the time. You were unlucky.');
-      } else {
-        resolve(getWidgets(req));
-      }
+      // if (Math.floor(Math.random() * 3) === 0) {
+      //   reject('Widget load fails 33% of the time. You were unlucky.');
+      // } else {
+      //   resolve(getWidgets(req));
+      // }
+      resolve(getWidgets(req));
     }, 1000); // simulate async load
   });
 }

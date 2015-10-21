@@ -14,7 +14,7 @@ export default class Person extends Component {
     const {name, description, image, email, website} = this.props;
 
     const styles = require('./Person.scss');
-
+    
     return (
       <div className={styles}>
         <h1>{name}</h1>

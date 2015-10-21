@@ -1,12 +1,46 @@
 import Immutable from 'immutable';
 
-const defaultState = new Immutable.List();
+const LOAD = 'people/LOAD';
+const LOAD_SUCCESS = 'people/LOAD_SUCCESS';
+const LOAD_FAIL = 'people/LOAD_FAIL';
+
+const defaultState = new Immutable.Map({
+  data: new Immutable.List()
+});
 
 export default function todoReducer(state = defaultState, action) {
   switch (action.type) {
-    case 'GET_PEOPLE':
-      return state.concat(action.res.data);
+    case LOAD:
+      return {
+        ...state,
+        loading: true
+      };
+    case LOAD_SUCCESS:
+      console.log(action);
+      return {
+        ...state,
+        loading: false,
+        loaded: true,
+        data: action.result,
+        error: null
+      };
+    case LOAD_FAIL:
+      return {
+        ...state,
+        loading: false,
+        loaded: false,
+        data: null,
+        error: action.error
+      };
     default:
       return state;
   }
+}
+
+export function loadPeople() {
+  console.log('in load people');
+  return {
+    types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
+    promise: (client) => client.get('/widget/load/param1/param2') // params not used, just shown as demonstration
+  };
 }
