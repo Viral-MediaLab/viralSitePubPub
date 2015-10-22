@@ -17,7 +17,6 @@ export default class App extends Component {
   
 
   render() {
-    import './image-gallery.css';
     const styles = require('./App.scss');
 
     const viralLogoStyle = {
