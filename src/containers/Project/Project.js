@@ -64,7 +64,7 @@ export default class Project extends Component {
     if(this.props.loading){
     	loading = 'Loading'
     }else{
-    	loading = null;
+    	loading = <a href={'http://www.pubpub.org/pub/'+data.uniqueTitle} target="_blank"><h3>Read/Comment on PubPub</h3></a>;
     }
 
     const markdownOptions = {
@@ -75,11 +75,11 @@ export default class Project extends Component {
 
     return (
       <div className={styles.projectWrapper}>
-        <h1>{loading}</h1>
+        
         <h1>{data.displayTitle}</h1>
         
         {authors()}
-        <a href={'http://www.pubpub.org/pub/'+data.uniqueTitle} target="_blank"><h3>Read/Comment on PubPub</h3></a>
+        {loading}
 
         <Markdown source={data.abstract} />
         <hr/>

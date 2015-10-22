@@ -1,14 +1,43 @@
 .projectContainer{
-	width: 50%;
+	width: 33%;
+	padding: 20px;
+	position: relative;
 	&:hover{
-		background-color: rgba(255,255,255,0.05);
+		background-color: rgba(255,255,255,0.1);
 	}
 	float: left;
 	img{
-		width: 200px;
+		// width: 200px;
+		width: 100%;
+	}
+	h2{
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		padding: 0px 10px;
+		width: calc(100% - 60px);
+		margin: 0px;
+		float: left;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		background-color: rgba(255,255,255,0.8);
+		color: #444;
 	}
 	p{
+		position: absolute;
+		top: 49px;
+		left: 20px;
+		padding: 0px 10px;
+		padding-bottom: 5px;
+		margin: 0px;
+		width: calc(100% - 60px);
 		font-size: 20px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		background-color: rgba(255,255,255,0.8);
+		color: #444;
 	}
 	.abstract{
 		font-size: 14px;
