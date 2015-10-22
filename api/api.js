@@ -8,8 +8,7 @@ require('../server.babel'); // babel registration (runtime transpilation for nod
 import express from 'express';
 import session from 'express-session';
 import bodyParser from 'body-parser';
-// import config from '../src/config';
-import config from './config';
+import config from '../src/config';
 import PrettyError from 'pretty-error';
 import http from 'http';
 import request from 'request';

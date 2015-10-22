@@ -18,6 +18,7 @@ module.exports = {
   context: path.resolve(__dirname, '..'),
   entry: {
     'main': [
+      'bootstrap-sass!./src/theme/bootstrap.config.js',
       './src/client.js'
     ]
   },
