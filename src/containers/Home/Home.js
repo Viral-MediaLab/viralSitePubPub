@@ -12,7 +12,7 @@ const images = require('../../../data/images.json');
 
 export default class Home extends Component {
 	handleSlide(index) {
-	  console.log('Slid to ' + index);
+	  // console.log('Slid to ' + index);
 	}
 
   render() {
