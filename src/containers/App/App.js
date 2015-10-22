@@ -20,12 +20,34 @@ export default class App extends Component {
     const styles = require('./App.scss');
     return (
       <div className={styles.app}>
-        <p><Link to={`/project`}>Project</Link></p>
-        <p><Link to={`/`}>Home</Link></p>
+        <div className={styles.header}><Link to={`/`}><img src="/Viral_Logo.png" /></Link></div>
+        <div className="nav">
+          <ul>
+            <li><Link to={`/projects`}>Projects</Link></li>
+            <li><Link to={`/people`}>People</Link></li>
+            <li><Link to={`/contact`}>Contact</Link></li>
+            <li><Link to={`/guide`}>Guide</Link></li>
+          </ul>
+        </div>
+
         <div className={styles.appContent}>
           {this.props.children}
+        </div>
+
+        <div className="footer">
+          <hr/>
+          <div><img src="/ML_Logo.png" /></div>
+          <ul>
+            <li><Link to={`/projects`}>Projects</Link></li>
+            <li><Link to={`/people`}>People</Link></li>
+            <li><Link to={`/contact`}>Contact</Link></li>
+            <li><Link to={`/guide`}>Guide</Link></li>
+          </ul>
         </div>
       </div>
     );
   }
 }
+
+
+// <li><Link to={`/wordoflip`}>Word of Lip</Link></li>

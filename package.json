@@ -25,7 +25,8 @@
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "production",
-        "APIPORT": 3030
+        "APIPORT": 3030,
+        "PORT": 8080
       }
     },
     "start-prod-api": {
@@ -76,6 +77,8 @@
     "less-loader": "2.2.1",
     "lru-memoize": "1.0.0",
     "map-props": "1.0.0",
+    "mongodb": "^2.0.46",
+    "mongoose": "^4.1.12",
     "multireducer": "1.0.2",
     "piping": "0.3.0",
     "pretty-error": "1.2.0",
@@ -83,11 +86,14 @@
     "react": "^0.14.0",
     "react-document-meta": "2.0.0-rc2",
     "react-dom": "0.14.0",
+    "react-image-gallery": "^0.4.6",
     "react-inline-css": "2.0.0",
     "react-redux": "^4.0.0",
+    "react-remarkable": "^1.1.1",
     "react-router": "1.0.0-rc3",
     "redux": "3.0.1",
     "redux-form": "^2.2.6",
+    "request": "^2.65.0",
     "serialize-javascript": "1.1.2",
     "serve-favicon": "2.3.0",
     "serve-static": "1.10.0",

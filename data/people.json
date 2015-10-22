@@ -1,0 +1,62 @@
+[
+{
+	"firstName": "Andrew",
+	"lastName": "Lippman",
+	"url": "http://www.media.mit.edu/people/lip",
+	"image": "/people/lip.jpeg",
+	"description":"Andrew Lippman has a more than 35-year history at MIT. His work at the Media Lab has ranged from wearable computers to global digital television. Currently, he heads the Lab's Viral Communications research group, which examines scalable, real-time networks whose capacity increases with the number of members. This new approach to telephony, sensor interconnection, and broadcasting transfers 'mainframe communications' technology to distributed, personally defined, cooperative communicators. In addition, he co-directs MIT's interdisciplinary Communications Futures program. Lippman has directed research programs on digital pictures, personal computers, entertainment, and graphics, and he has served on advisory boards of technology start-ups. Currently, he is on the science councils of both non-profit and for-profit companies addressing global information infrastructures. Lippman received both his BS and MS in electrical engineering from MIT. In 1995 he completed his PhD studies at the EPFL, Lausanne, Switzerland."
+},
+{
+	"firstName": "Travis",
+	"lastName": "Rich",
+	"title": "PhD Candidate",
+	"url": "http://www.travisrich.com",
+	"image": "/people/trich.jpeg"
+},
+{
+	"firstName": "Tomer",
+	"lastName": "Weller",
+	"title": "M.S. Candidate",
+	"url": "http://www.tomerweller.com/",
+	"image": "/people/tomer.jpg"
+},
+{
+	"firstName": "Thariq",
+	"lastName": "Shihipar",
+	"title": "M.S. Candidate",
+	"url": "http://www.trq.im/",
+	"image": "/people/thariq.jpg"
+},
+{
+	"firstName": "Ariel",
+	"lastName": "Ekblaw",
+	"title": "M.S. Candidate",
+	"url": "",
+	"image": "/people/ariel.jpg"
+},
+{
+	"firstName": "Brian",
+	"lastName": "Tice",
+	"title": "M.S. Candidate",
+	"url": "http://www.brianjtice.com/",
+	"image": "/people/brian.jpg"
+},
+{
+	"firstName": "Jasmin",
+	"lastName": "Rubinovitz",
+	"title": "M.S. Candidate",
+	"url": "",
+	"image": "/people/jasmin.jpg"
+},
+{
+	"firstName": "Deb",
+	"lastName": "Widener",
+	"title": "Group Administrator",
+	"url": "http://www.media.mit.edu/people/dw",
+	"image": "/people/dw.jpeg"
+}
+]
+
+
+
+

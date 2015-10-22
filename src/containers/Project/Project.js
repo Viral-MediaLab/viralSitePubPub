@@ -1,48 +1,76 @@
 import React, {Component, PropTypes} from 'react';
-// import React, {Component} from 'react';
+import Markdown from 'react-remarkable';
 import {connect} from 'react-redux';
-import {loadPeople, clearPeople} from 'redux/reducers/people';
+import {loadProject, clearProject} from 'redux/reducers/project';
 
 @connect(
-  state => ({data: state.people.data})
+  state => ({data: state.project.data, loading: state.project.loading})
 )
 export default class Project extends Component {
   static propTypes = {
-    data: PropTypes.array,
+    data: PropTypes.object,
+    loading: PropTypes.bool,
     dispatch: PropTypes.func
   }
 
-  // static fetchData(getState, dispatch) {
-  //   // const promises = [];
-  //   // promises.push(dispatch(loadAuth()));
-  //   // return Promise.all(promises);
-  // }
   componentWillUnmount() {
     console.log('leaving!');
-    this.props.dispatch(clearPeople());
-    // dispatch(clearPeople());
+    this.props.dispatch(clearProject());
+    
   }
 
   static fetchDataDeferred(getState, dispatch) {
-    return dispatch(loadPeople());
+  	console.log('in project fetch');
+  	// console.log(getState().router.params.projectName)
+    return dispatch(loadProject(getState().router.params.projectName));
   }
 
   render() {
     // const {user, logout} = this.props;
-    console.log('hi');
-    console.log(this.props.data);
+    // console.log('hi');
+    // console.log(this.props.data);
+    const data = this.props.data;
+    const authors = function(){
+      if(data.authors){
+        return data.authors.map((author)=>{
+            return (
+              <span>{author.name}</span>
+            );
+          });  
+      }else{
+        return null;
+      }
+      
+    }
+    // const abstract = function(){
+    //   if(data.versions){
+    //     return <p>{data.versions.abstract}</p>;
+    //   }else{
+    //     return null;
+    //   }
+    // }
+
+    var loading;
+
+    if(this.props.loading){
+    	loading = 'Loading'
+    }else{
+    	loading = null;
+    }
     return (
       <div className="container">
-        <h1>Project!</h1>
-          { this.props.data.map((item)=> {
-            return (<div key={item.id}>
-              {item.color}
-              {item.owner}
-              <hr/>
-            </div>
-            );
-          })
-        }
+        <h1>{loading}</h1>
+        <h1>{data.displayTitle}</h1>
+        
+        {authors()}
+        <a href={'http://www.pubpub.org/pub/'+data.uniqueTitle} target="_blank"><h3>Read/Comment on PubPub</h3></a>
+
+        <Markdown source={data.abstract} />
+        <hr/>
+        <Markdown source={data.content} />
+        
+
+          
       </div>
     );
   }

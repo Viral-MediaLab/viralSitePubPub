@@ -1,14 +1,14 @@
 import Immutable from 'immutable';
 
-const LOAD = 'people/LOAD';
-const LOAD_SUCCESS = 'people/LOAD_SUCCESS';
-const LOAD_FAIL = 'people/LOAD_FAIL';
+const LOAD = 'project/LOAD';
+const LOAD_SUCCESS = 'project/LOAD_SUCCESS';
+const LOAD_FAIL = 'project/LOAD_FAIL';
 
 const defaultState = new Immutable.Map({
   data: new Immutable.List()
 });
 
-export default function todoReducer(state = defaultState, action) {
+export default function projectReducer(state = defaultState, action) {
   switch (action.type) {
     case LOAD:
       console.log('in Load');
@@ -18,7 +18,7 @@ export default function todoReducer(state = defaultState, action) {
       };
     case LOAD_SUCCESS:
       console.log('in load success');
-      console.log(action);
+      // console.log(action);
       return {
         ...state,
         loading: false,
@@ -34,7 +34,7 @@ export default function todoReducer(state = defaultState, action) {
         data: null,
         error: action.error
       };
-    case 'CLEAR_PEOPLE':
+    case 'CLEAR_PROJECT':
       return {
         ...state,
         data: new Immutable.List()
@@ -44,17 +44,17 @@ export default function todoReducer(state = defaultState, action) {
   }
 }
 
-export function loadPeople() {
-  console.log('in load people');
+export function loadProject(projectName) {
+  console.log('in load project');
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.get('/widget/load/param1/param2') // params not used, just shown as demonstration
+    promise: (client) => client.post('/loadProject', {data:[projectName]}) // params not used, just shown as demonstration
   };
 }
 
-export function clearPeople() {
-  console.log('in clear people');
+export function clearProject() {
+  console.log('in clear project');
   return {
-    type: 'CLEAR_PEOPLE'
+    type: 'CLEAR_PROJECT'
   };
 }
