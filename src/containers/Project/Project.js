@@ -41,7 +41,7 @@ export default class Project extends Component {
         return null;
       }
       
-    }
+    };
     // const abstract = function(){
     //   if(data.versions){
     //     return <p>{data.versions.abstract}</p>;
@@ -57,6 +57,11 @@ export default class Project extends Component {
     }else{
     	loading = null;
     }
+
+    const markdownOptions = {
+      html: true
+    };
+
     return (
       <div className="container">
         <h1>{loading}</h1>
@@ -67,7 +72,7 @@ export default class Project extends Component {
 
         <Markdown source={data.abstract} />
         <hr/>
-        <Markdown source={data.content} />
+        <Markdown options={markdownOptions} source={data.content} />
         
 
           
