@@ -1,5 +1,46 @@
-.personClass{
+.isAndy{
+	a{
+		color: white;
+		text-decoration: none;
+	}
+	position: relative;
+	width: 100%;
+	div{
+
+	}
+
+	img{
+		width: 250px;
+	}
 	h1{
-		color: red;
+		width: calc(100% - 275px);
+		float: right;
+		margin-top: 0;
+	}
+	p{
+		width: calc(100% - 275px);
+		float: right;
+	}
+	
+}
+
+.notAndy{
+	margin-top: 10px;
+	a{
+		color: white;
+		text-decoration: none;
+	}
+	float: left;
+	width: 33%;
+	div{
+		width: 200px;
+		margin: 0 auto;
+	}
+	h1{
+		white-space: nowrap;
+		margin-bottom: 3px;
+	}
+	p{
+		margin: 3px 0px;
 	}
 }

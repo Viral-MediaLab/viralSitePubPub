@@ -34,10 +34,16 @@ var User = require('./models').User;
 app.post('/loadProjects', function(req,res){
   // Want to load each project's title, authors, publishdate, abstract, image
   console.log(req.body);
-  Pub.find({'uniqueTitle': {$in: req.body}}, { '_id': 0, 'collaboratorsUsers': 1, 'image':1, 'displayTitle':1, 'uniqueTitle':1})
+  Pub.find({'uniqueTitle': {$in: req.body}}, { '_id': 0, 'collaboratorsUsers': 1, 'image':1, 'displayTitle':1, 'uniqueTitle':1, 'versions':1})
     .populate({ path: 'collaboratorsUsers.authors', select: 'username name image'})
+    .populate({ path: "versions", select: 'abstract'})
     .lean()
     .exec(function (err, pubs) {
+      pubs.forEach(function(pub){
+        pub['abstract'] = pub.versions[pub.versions.length-1].abstract;
+        delete pub.versions;
+      });
+      
       res.status(201).json(pubs);
     });
   

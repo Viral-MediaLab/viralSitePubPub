@@ -19,7 +19,7 @@ export default class Home extends Component {
     const styles = require('./Home.scss');
     return (
       <div className={styles.home}>
-        <div id="vision" className="vision-section">
+        <div id="vision" className={styles.vision}>
           <p>The Viral Communications group creates scalable technologies that evolve with user inventiveness. We have a rich history in proximal and infrastructure-free networks and their applications, as well as in applications that integrate mobile computing with the spaces around us. These include codes embedded in objects and in images that make them self-describing and detectable. In 2013, we introduced a new focus on Ultimate Media (see UM listing.) This multi-sponsor program envisions a unified interface for all visual media, including television, movies, magazines, and newspapers. It is a generalized platform for social and data-driven exploration and creation of news, sports, and narrative experiences.</p>
         </div>
         <div className={styles.gallery}>

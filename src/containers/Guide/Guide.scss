@@ -1,10 +1,13 @@
 .guide{
+	width: 90%;
+	margin: 0 auto;
 	iframe{
-	  width: 90%;
-	  height: 80vh;
+	  width: 100%;
+	  height: calc(100vh - 400px);
 	  border: none;
 	  padding: 10px;
 	  margin-top: 15px;
 	  background-color: white;
+	  margin: 0 auto;
 	}
 }

@@ -1,11 +1,84 @@
+$font-family-sans-serif: "Helvetica Neue", Helvetica, sans-serif;
+
 .app {
   // background-color: black;
   .header{
   	img{
-  		height: 200px;
+  		// height: 200px;
   	}
   }
 }
 .appContent {
   margin: 50px 0; // for fixed navbar
+  clear: both;
+  padding: 50px 30px;
+  max-width: 1500px;
+  margin: 0 auto;
+  &:after{
+  	display: table;
+  	clear:both;
+  	content:"";
+  }
+  position: relative;
+}
+
+.logoDiv{
+	float: left;
+	width: 235px;
+
+}
+.mlLogoDiv{
+	float: left;
+	width: 235px;
+
+}
+
+.topnav{
+	float: left; 
+	width: calc(100% - 235px);
+	font-family: $font-family-sans-serif;
+	ul{
+		list-style: none;
+		line-height: 113px;
+		font-size: 18px;
+	}
+	li{
+		float: left;
+		padding: 0px 15px;
+		color: #ccc;
+		text-transform: lowercase;
+		a{
+			color: #ccc;
+			text-decoration: none;
+			&:hover{
+				color: #fff;
+			}
+		}
+	}
+}
+
+
+.bottomnav{
+	float: left; 
+	width: calc(100% - 235px);
+	font-family: $font-family-sans-serif;
+	ul{
+		list-style: none;
+		float: right;
+		font-size: 16px;
+		line-height: 45px;
+	}
+	li{
+		float: left;
+		padding: 0px 15px;
+		color: #ccc;
+		text-transform: lowercase;
+		a{
+			color: #ccc;
+			text-decoration: none;
+			&:hover{
+				color: #fff;
+			}
+		}
+	}
 }

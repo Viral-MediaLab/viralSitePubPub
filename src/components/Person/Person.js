@@ -18,13 +18,24 @@ export default class Person extends Component {
 
     const styles = require('./Person.scss');
 
+    var classType;
+
+    if(personData.description){
+      classType = styles.isAndy;
+    }else{
+      classType = styles.notAndy;
+    }
+    
+
     return (
-      <div className={styles.personClass}>
-        <h1>{personData.firstName} {personData.lastName}</h1>
-        <p>{personData.description}</p>
-        <img src={personData.image} />
-        <p>{personData.email}</p>
-        <p>{personData.url}</p>
+      <div className={classType}>
+        <div>
+          <a target="_blank" href={personData.url}><h1>{personData.firstName} {personData.lastName}</h1></a>
+          <p>{personData.description}</p>
+          <p>{personData.title}</p>
+          <a target="_blank" href={personData.url}><img src={personData.image} /></a>
+        </div>
+        
       </div>
     );
   }

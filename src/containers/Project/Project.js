@@ -32,11 +32,20 @@ export default class Project extends Component {
     const data = this.props.data;
     const authors = function(){
       if(data.authors){
-        return data.authors.map((author)=>{
+        let string = data.authors.map((author,index)=>{
+          if(index == data.authors.length-1){
             return (
               <span>{author.name}</span>
-            );
-          });  
+            )
+          }else{
+            return (
+              <span>{author.name}, </span>
+            )
+          }
+        });
+            
+        return string;  
+
       }else{
         return null;
       }
@@ -62,8 +71,10 @@ export default class Project extends Component {
       html: true
     };
 
+    const styles = require('./Project.scss');
+
     return (
-      <div className="container">
+      <div className={styles.projectWrapper}>
         <h1>{loading}</h1>
         <h1>{data.displayTitle}</h1>
         

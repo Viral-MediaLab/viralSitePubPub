@@ -7,8 +7,6 @@ export default class Guide extends Component {
 
     return (
       <div className={styles.guide}>
-        <h1>Guide</h1>
-
         <iframe src="http://www.pubpub.org/pub/viralguide">
           <p>Your browser does not support iframes.</p>
         </iframe>
